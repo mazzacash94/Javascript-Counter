@@ -1,9 +1,9 @@
 <html>
   <head>
-    <script src="test.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
-    <body style="background-image: url(sfondo.jpeg);">
+    <body style="background-image: url(img/sfondo.jpeg);">
       <div align="middle">
         <p>
           JS Counter
@@ -11,8 +11,24 @@
         <p id="counter">
           0
         </p>
-        <button class="plusButton" onclick="Plus()">+</button>
-        <button class="minusButton" onclick="Minus()">-</button>
+        <button class="plusButton" id="plus">più</button>
+        <button class="minusButton" id="minus">meno</button>
       </div>
+      <script>
+      	document.getElementById("plus").addEventListener('click', Plus);
+	document.getElementById("minus").addEventListener('click', Minus);
+
+	var x = 0;
+	
+	function Plus(){
+  		x++;
+  		document.getElementById('counter').innerHTML = x;
+		}
+
+	function Minus(){
+  		x--;
+  		document.getElementById('counter').innerHTML = x;
+		}
+      </script>
     </body>
 </html>
